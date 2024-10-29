@@ -1,0 +1,68 @@
+﻿<Window x:Class="TextEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem 
+                    Header="Open File"
+                    Click="OpenFile_Click"/>
+                <MenuItem 
+                    Header="Save File" 
+                    Click="SaveFile_Click"
+                    />
+            </MenuItem>
+            <MenuItem Header="Edit" >
+                <MenuItem Header="Undo"
+                          Click ="Undo_Click"/>
+                <MenuItem 
+                    Header="Redo"
+                    Click="Redo_Click"/>
+            </MenuItem>
+            <MenuItem Header="Text" >
+                <MenuItem Header="Find"
+                          Click="Find_Click"/>
+                <MenuItem Header="Change"
+                          Click="Change_Click"/>
+                <Separator></Separator>
+                <MenuItem Header="Copy"
+                          Click="Copy_Click"/>
+                <MenuItem Header="Cut"
+                          Click="Cut_Click"/>
+                <MenuItem Header="Insert"
+                          Click="Insert_Click"/>
+                <Separator></Separator>
+                <MenuItem Header="Clear"
+                          Click="Clear_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <TextBlock x:Name="notOpenFileText"
+            Text="Файл не открыт" 
+                   FontSize="16" 
+                   Foreground="Black" 
+                   HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                   Visibility="Visible"
+                   RenderTransformOrigin="0.261,0.21" />
+
+
+        <RichTextBox x:Name="richTextBox" 
+                     Margin="5,25,5,5" 
+                     AcceptsReturn="True" 
+                     VerticalScrollBarVisibility="Auto"
+                     Visibility="Hidden"
+                     
+                     />
+    </Grid>
+    
+    
+</Window>
+
+    
+    
